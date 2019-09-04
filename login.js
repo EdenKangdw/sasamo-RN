@@ -12,11 +12,10 @@ import {
     Text,
     View,
     Image,
-    TextInput,
     TouchableOpacity,
 } from 'react-native';
 
-import textInput from './textInput'
+import TextInput from './textInput'
 
 const colors = {
     background: '#e3e3e3',
@@ -35,9 +34,7 @@ class App extends React.Component {
         password: '',
     }
     render() {
-
-
-        return (
+         return (
             <View style={styles.container}>
                 <View style={styles.iconWrapper}>
                     <Image style={styles.icon} source={require('./assets/symbol.png')} />
@@ -46,31 +43,33 @@ class App extends React.Component {
                 <View style={styles.wrapper}>
                     <View style={styles.wrapperInput}>
                         <TextInput
-                            style={[
-                                styles.input,
-                                { marginTop: 60 },
-                            ]}
-                            value={this.state.email}
-                            placeholder='Please write your email address'
+                            style={{marginTop: 60}}
+                            txtLabel='Email'
+                            txt={this.state.email}
+                            /* labelStyleFocus = {{
+                                color: 'red',
+                                fontSize: 20,
+                            }} props 전달을 확인하기 위한 코드 */ 
+                            textHint='Please write your email address'
                             placeholderTextColor={colors.blueyGray}
                             onTextChanged={(text) => {
                                 this.onTextChanged('EMAIL', text)
                             }}
                         />
 
-                        <TextInput
+                         <TextInput
                             style={[
-                                styles.input,
-                                { marginTop: 8 }
+                                { marginTop: 10 }
                             ]}
-                            value={this.state.password}
-                            placeholder='Please write your password'
+                            txtLabel='Password'
+                            txt={this.state.password}
+                            textHint='Please write your password'
                             placeholderTextColor={colors.blueyGray}
-                            onChangeText={(text) => {
+                            onTextChanged={(text) => {
                                 this.onTextChanged('PASSWORD', text)
                             }}
-                            secureTextEntry
-                        />
+                            isPassword
+                        /> 
 
                     </View>
                     <TouchableOpacity style={styles.touchForgotPw}>

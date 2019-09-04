@@ -16,52 +16,6 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-
-export default class shared extends React.Component {
-
-    defaultProps = {
-        style: styles.wrapper,
-        labelStyle: styles.label,
-        labelStyleFocus: styles.labelFocus,
-    }
-
-    
-    render() {
-        return (
-            <View style={[
-                styles.wrapper,
-                this.props.style
-            ]}>
-            {
-                (!!this.props.txtLabel)
-                ?   <Text style={this.state.focused ? this.props.labelStyleFocus : labelStyle}>
-                        {this.props.txtLabel}
-                        </Text> 
-                    :   <View></View>
-                    
-                    
-                }
-            <TextInput
-                style={[
-                    this.state.focus ? styles.inputFocus : styles.input,
-                    this.props.inputStyle,
-                ]}
-                multiline={this.props.multiline}
-                onChangeText={this.props.onChangeText}
-                value={this.props.txt}
-                onFocus={ () => this.setState({ focused: true })}
-                onBlur={ () => this.setState({focused: false })}
-                placeholder={this.props.textHint}
-                placeholderTextColor = {this.props.placeholderTextColor}
-                secureText = {this.props.password}
-                
-                />
-
-            </View>
-        )
-    }
-}
-
 const colors = {
     background: '#e3e3e3',
     dusk: 'rgb(65, 77, 107)',
@@ -71,8 +25,6 @@ const colors = {
     paleGray: 'rgb(233, 237, 244)',
 
 }
-
-
 
 const styles = StyleSheet.create({
     wrapper: {
@@ -120,4 +72,55 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-start',
     },
   }) 
-  
+
+
+export default class shared extends React.Component {
+
+    static defaultProps = {
+        style: styles.wrapper,
+        labelStyle: styles.label,
+        labelStyleFocus: styles.labelFocus,
+        inputFocus : styles.inputFocus,
+        input : styles.input,
+    }
+
+    state = {
+        focused : false
+    }
+
+    
+    render() {
+        return (
+            <View style={[
+                styles.wrapper,
+                this.props.style,
+            ]}>
+            {
+                (!!this.props.txtLabel)
+                ?   <Text style={this.state.focused ? this.props.labelStyleFocus : this.props.labelStyle}>
+                        {this.props.txtLabel}
+                    </Text> 
+                : <View/>
+                    
+                    
+                }
+            <TextInput
+                style={[
+                    this.state.focused ? this.props.inputFocus : this.props.input,
+                    this.props.inputStyle,
+                ]}
+                multiline={this.props.multiline}
+                onChangeText={this.props.onTextChanged}
+                value={this.props.txt}
+                onFocus={ () => this.setState({ focused: true })}
+                onBlur={ () => this.setState({focused: false })}
+                placeholder={this.props.textHint}
+                placeholderTextColor = {this.props.placeholderTextColor}
+                secureText = {this.props.isPassword}
+                
+                />
+
+            </View>
+        )
+    }
+}
