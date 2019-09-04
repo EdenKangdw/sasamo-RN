@@ -26,89 +26,63 @@ import {
 
 const App = () => {
   return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+    <SafeAreaView>
+          <View style={styles.container}>
+            <View style={styles.box1}/>
+            <View style={styles.box2}/>
+            <View style={styles.box3}/>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
+            <View style={styles.container2}>
+              <View style={styles.box4}/>
+              <View style={styles.box5}/>
+            </View>
+        </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    // primary axis
+    justifyContent: 'flex-start', // flex-start, flex-end, center, space-evenly, space-between, space-around
+    // secondary axis
+    alignItems: 'flex-start', // flex-start, flex-end, center, stretch, baseline
+    backgroundColor: 'yellow',
+    flexDirection: 'column',
+    flexWrap: 'nowrap',// wrap or nowrap, wrap-reverse
+    
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  container2: {
+    flex: 1,
+    // primary axis
+    justifyContent: 'flex-start', // flex-start, flex-end, center, space-evenly, space-between, space-around
+    // secondary axis
+    alignItems: 'flex-start', // flex-start, flex-end, center, stretch, baseline
+    backgroundColor: 'yellow',
+    flexDirection: 'row',
+    flexWrap: 'nowrap' // wrap or nowrap, wrap-reverse
   },
-  body: {
-    backgroundColor: Colors.white,
+  box1 : {
+    height: 100,
+    width:'100%',
+    flexBasis: 50,
+    flexGrow:1, // 비율로 조절하기 
+    // flexShrink: 1,
+    backgroundColor: 'red'
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  box2 : {
+    height: 100,
+    width: 50,
+    flexGrow: 1,
+    backgroundColor: 'green'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  box3 : {
+    height: 100,
+    width: 50,
+    flexGrow:1,
+    backgroundColor: 'blue'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  
 });
 
 export default App;
