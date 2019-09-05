@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
+    "ios-7" : "react-native run-ios --simulator='iPhone 7'",
     "aos": "react-native run-android",
     "test": "jest",
     "lint": "eslint ."
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/runtime": "^7.5.5",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",

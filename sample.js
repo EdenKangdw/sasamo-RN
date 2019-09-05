@@ -16,14 +16,19 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+const styles = StyleSheet.create({
+    container : {
+        flex: 1,
+    }
+})
 
-class App extends React.Component {
+
+export default class App extends React.Component {
     render() {
         return (
-            <View style={}></View>
+            <View style={styles.container}></View>
         )
     }
 }
 
 
-const styles = StyleSheet.create({})
