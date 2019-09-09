@@ -17,9 +17,11 @@ import type {
 } from 'react-native/Libraries/StyleSheet/StyleSheetTypes'
 
 
-import TextInput from './textInput'
-import Button from './button'
-import { colors } from './App'
+import TextInput from '../shared/textInput'
+import Button from '../shared/button'
+
+
+import colors  from '../../utils/styles'
 
 type Styles = {
     container: ViewStyle,

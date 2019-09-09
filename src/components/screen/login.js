@@ -9,19 +9,12 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import {IC_APP} from '../../utils/icons'
-import TextInput from './textInput'
-import Button from './button'
+import { IC_APP } from '../../utils/icons'
+import colors from '../../utils/styles'
 
-const colors = {
-    background: '#e3e3e3',
-    dusk: 'rgb(65, 77, 107)',
-    dodgerBlue: 'rgb(58, 139, 255)',
-    cloudyBlue: 'rgb(175,194,219)',
-    blueyGray: 'rgb(134,154,183)',
-    paleGray: 'rgb(233, 237, 244)',
+import TextInput from '../shared/textInput'
+import Button from '../shared/button'
 
-}
 
 
 const styles = StyleSheet.create({
@@ -217,7 +210,9 @@ class App extends React.Component<Props, State> {
                     <View style={styles.viewBtnWrapper}>
                             <Button 
                                 containerStyle={{ flex: 1}}
-                                onPress = {() => {}}
+                                onPress = {() => {
+                                    this.props.navigation.navigate('signUp')
+                                }}
                                 style= {styles.btnSignUp}
                                 textStyle={styles.txtSignUP}
                                 >Sign Up</Button>

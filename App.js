@@ -1,10 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+
 
 import React, {Fragment} from 'react';
 import {
@@ -24,24 +18,26 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { SwitchNavigator, AppContainer } from './src/components/navigations/switchNavigator'
+import Login from './src/components/screen/login'
+import SignUp from './src/components/screen/signUp'
+
 const App = () => {
   return (
-    <SafeAreaView>
-          <View style={styles.container}>
-            <View style={styles.box1}/>
-            <View style={styles.box2}/>
-            <View style={styles.box3}/>
-          </View>
-            <View style={styles.container2}>
-              <View style={styles.box4}/>
-              <View style={styles.box5}/>
-            </View>
-        </SafeAreaView>
+    <View style = {styles.container}>
+      <AppContainer/>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  
+  container0: {
     flex: 1,
     // primary axis
     justifyContent: 'flex-start', // flex-start, flex-end, center, space-evenly, space-between, space-around

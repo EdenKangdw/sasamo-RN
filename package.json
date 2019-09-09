@@ -5,22 +5,28 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
-    "ios-7" : "react-native run-ios --simulator='iPhone 7'",
+    "ios-7": "react-native run-ios --simulator='iPhone 7'",
     "aos": "react-native run-android",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "flow": "flow"
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react-native": "0.60.5",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-navigation": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
     "eslint": "^6.2.2",
+    "flow-bin": "^0.98.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.8.6"
