@@ -18,15 +18,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { SwitchNavigator, AppContainer } from './src/components/navigations/switchNavigator'
+import { SwitchNavigator, AppContainer, withNavigation } from './src/components/navigations/switchNavigator'
 import Login from './src/components/screen/login'
 import SignUp from './src/components/screen/signUp'
 
 const App = () => {
   return (
-    <View style = {styles.container}>
       <AppContainer/>
-    </View>
   );
 };
 

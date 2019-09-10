@@ -1,17 +1,21 @@
-
+// @flow
 
 import React, { Fragment } from 'react';
 import {
-    Platform,
+  Platform,
     StyleSheet,
     Text,
     View,
+    Image,
+    TextInput,
+    TouchableOpacity,
 } from 'react-native';
 
-type Props = {}
 const styles = StyleSheet.create({
     container : {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 
@@ -19,7 +23,9 @@ const styles = StyleSheet.create({
 export default class App extends React.Component {
     render() {
         return (
-            <View style={styles.container}></View>
+            <View style={styles.container}>
+              <Text>Friends...</Text>
+            </View>
         )
     }
 }

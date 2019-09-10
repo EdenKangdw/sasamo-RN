@@ -10,6 +10,7 @@ import {
     TextInput,
     TouchableOpacity,
 } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 import type {
     ____ViewStyleProp_Internal as ViewStyle,
@@ -24,8 +25,6 @@ type Styles = {
     btnDisabled: ViewStyle,
     txt: TextStyle,
     imgLeft: ImageStyle,
-
-
 }
 
 const styles = StyleSheet.create({

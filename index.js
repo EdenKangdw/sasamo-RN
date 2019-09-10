@@ -21,4 +21,4 @@ export const colors = {
 
 }
 
-AppRegistry.registerComponent(appName, () => loginView);
+AppRegistry.registerComponent(appName, () => App);

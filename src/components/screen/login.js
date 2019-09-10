@@ -152,7 +152,9 @@ const styles = StyleSheet.create({
 
 })
 
-type Props = {}
+type Props = {
+    navigation: any,
+}
 type State = {
     email : string,
     password: string,
@@ -211,7 +213,7 @@ class App extends React.Component<Props, State> {
                             <Button 
                                 containerStyle={{ flex: 1}}
                                 onPress = {() => {
-                                    this.props.navigation.navigate('signUp')
+                                    this.props.navigation.navigate('SignUp');
                                 }}
                                 style= {styles.btnSignUp}
                                 textStyle={styles.txtSignUP}
