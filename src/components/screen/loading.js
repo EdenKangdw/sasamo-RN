@@ -21,12 +21,26 @@ const styles = StyleSheet.create({
 
 
 export default class App extends React.Component {
+    timer
+
     render() {
         return (
             <View style={styles.container}>
               <Text>Loading...</Text>
             </View>
         )
+    }
+
+    componentDidMount() {
+       this.timer = setTimeout(() => {
+            this.props.navigation.navigate('AuthStackNavigator')
+        }, 1500);
+    }
+
+    componentWillMount() {
+        if(this.timer) {
+            clearTimeout(this.timer)
+        }
     }
 }
 

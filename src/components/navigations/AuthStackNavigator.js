@@ -1,9 +1,9 @@
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
 import Login from '../screen/login'
 import SignUp from '../screen/signUp'
 
-export default createStackNavigator(
+const StackNavigator = createStackNavigator(
   {
     Login,
     SignUp
@@ -12,3 +12,5 @@ export default createStackNavigator(
     initialRouteName: 'Login'
   }
 )
+
+export default StackNavigator

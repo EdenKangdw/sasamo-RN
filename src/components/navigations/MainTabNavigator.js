@@ -7,16 +7,41 @@ import {
  AsyncStorage,
  BackHandler,
  StyleSheet,
+ TouchableOpacity,
 } from 'react-native';
-import { ratio, colors } from '../../utils/Styles';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+
+import { ratio, colors } from '../../utils/styles';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
 import Friends from '../screen/friend';
 import Message from '../screen/message';
-import Screen3 from '../screen/Screen3';
-import Screen4 from '../screen/Screen4';
 
-const MyNavigator = createMaterialTopTabNavigator(
+export const MainTabNavigatorOptions = ({ navigation }) => ({
+  title: 'App title',
+  headerLeft:
+    <View style={{
+      marginLeft: 16,
+    }}>
+      <TouchableOpacity
+        onPress={() => {}}
+      > 
+        <Text>Button</Text>
+      </TouchableOpacity>
+    </View>,
+
+    headerRight: 
+    <View style={{
+      marginRight: 16,
+    }}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('search')}
+      > 
+        <Text>Search</Text>
+      </TouchableOpacity>
+    </View>,
+})
+
+const MyNavigator = createMaterialTopTabNavigator( 
  {
    Friends,
    Message,
@@ -43,7 +68,7 @@ const MyNavigator = createMaterialTopTabNavigator(
        backgroundColor: 'rgb(102,134,205)',
      },
      labelStyle: {
-       fontSize: 14 * ratio,
+       fontSize: 14,
        color: 'tomato',
      },
      tabStyle: {
@@ -58,6 +83,7 @@ const MyNavigator = createMaterialTopTabNavigator(
    },
  },
 );
+
 type Props = {};
 type State = {};
 class Page extends React.Component<Props, State> {

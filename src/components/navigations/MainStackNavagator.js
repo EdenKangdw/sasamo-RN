@@ -1,14 +1,15 @@
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
-import MainTabNavigator from './MainTabNavigator'
+import MainTabNavigator, { MainTabNavigatorOptions } from './MainTabNavigator'
 import search from '../screen/search'
 
 export default createStackNavigator(
   {
-    MainTabNavigator
+    MainTabNavigator : {
+      screen: MainTabNavigator,
+      navigationOptions: MainTabNavigatorOptions,
+    },
     search,
   },
-  {
-    initialRouteName: 'Login'
-  }
+  
 )

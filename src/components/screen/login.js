@@ -7,6 +7,7 @@ import {
     View,
     Image,
     TouchableOpacity,
+    ScrollView,
 } from 'react-native';
 
 import { IC_APP } from '../../utils/icons'
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     },
     iconWrapper: {
         position: 'absolute',
-        top: 144, // 아이폰x의 status bar 높이가 44임
+        top: 76, // 아이폰x의 status bar 높이가 44임
         left: 40,
         flexDirection: 'column',
         alignItems: 'flex-start'
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     },
 
     txtCopyright: {
-        marginTop: 80,
+        marginTop: 60,
         fontSize: 12,
         color: colors.cloudyBlue
     }
@@ -161,6 +162,12 @@ type State = {
     isLoggingin: boolean,
 }
 class App extends React.Component<Props, State> {
+    static navigationOptions = {
+        headerStyle : {
+            borderBottomWidth: 0,
+            
+        }
+    }
     constructor(props: Props){
         super(props)
         this.state = {
@@ -172,6 +179,7 @@ class App extends React.Component<Props, State> {
     
     render() {
          return (
+        <ScrollView>
             <View style={styles.container}>
                 <View style={styles.iconWrapper}>
                     <Image style={styles.icon} source={IC_APP} />
@@ -244,6 +252,7 @@ class App extends React.Component<Props, State> {
                     <Text style={styles.txtCopyright}>copyright by Eden K.</Text>
                 </View>
             </View>
+        </ScrollView>
         )
     }
 
